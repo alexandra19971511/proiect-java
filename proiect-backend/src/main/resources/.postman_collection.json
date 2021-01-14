@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "e491a022-b214-4e2a-95a8-6b04fbbb19ef",
+		"name": "anda-proiect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"alexandrafrincu@gmail.com\",\n\t\"password\":\"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"eu@gmail.com\",\n\t\"password\":\"admin\",\n\t\"fullName\": \"eu Alexandra\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"token\":\"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJleHAiOjE1ODQzMDUyNjksImlhdCI6MTU4NDI4NzI2OX0.Iqv6az0armFqGABod4RJg4QKj02Wt3N7I0-Koff03y0wUmQhwRiAnyd1RoBEOc9lZO2qdH3nAKc1Jl134ETsAA\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/validate-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"validate-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllprofessors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MjMyODg4MSwiaWF0IjoxNTgyMzEwODgxfQ.AG6Kt21v-pREDtmTg1r8WIatFDNz13X5_6YV-_M4oDcg6eV4lFsZxFIIXmAoQmMGBlCRtT9t_ZnHmlK3yzbLNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/professor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"professor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfessorCourses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MjMzNTA1NCwiaWF0IjoxNTgyMzE3MDU0fQ.a8S-Uf_Ws_xu4jdqX3Cnld6OC6uIp417Dfu7pikD8YitOsim5ooFJ5m1FkcvSUdRjq_TYuZX_QUdmoEm-MyNmg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/course/professor/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"course",
+						"professor",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllprofessors -dashboard",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/dashboard/professor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dashboard",
+						"professor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllQuestion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authentication",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/question",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMean",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfQURNSU4iLCJleHAiOjE1ODI5MzM1MzUsImlhdCI6MTU4MjkxNTUzNX0.hJQGCAs5-Q6bwX9SZSursVsCzyUW550P7qd6K2q997T02U02imKGLNVKUepj6k2Hs0KEvk7YcIyPxei424F8QA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authentication",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/answer/mean/:professorId/:courseId",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"answer",
+						"mean",
+						":professorId",
+						":courseId"
+					],
+					"variable": [
+						{
+							"key": "professorId",
+							"value": "5"
+						},
+						{
+							"key": "courseId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllQuestionById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authentication",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MTExMzE0NCwiaWF0IjoxNTgxMDk1MTQ0fQ.Fg8sgRswfCGaqbqOD4XC7oWrdU22bDF5TSlj6hbZWvV2_-Sased-aeYxwbgRRinPkO8BtS_FyeNZsAqic4eQyQ",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/question/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"question",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAnswer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MjMyODg4MSwiaWF0IjoxNTgyMzEwODgxfQ.AG6Kt21v-pREDtmTg1r8WIatFDNz13X5_6YV-_M4oDcg6eV4lFsZxFIIXmAoQmMGBlCRtT9t_ZnHmlK3yzbLNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authentication",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MjMyODg4MSwiaWF0IjoxNTgyMzEwODgxfQ.AG6Kt21v-pREDtmTg1r8WIatFDNz13X5_6YV-_M4oDcg6eV4lFsZxFIIXmAoQmMGBlCRtT9t_ZnHmlK3yzbLNw",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/answer/professor/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"answer",
+						"professor",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getProfessor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU4MjMyODg4MSwiaWF0IjoxNTgyMzEwODgxfQ.AG6Kt21v-pREDtmTg1r8WIatFDNz13X5_6YV-_M4oDcg6eV4lFsZxFIIXmAoQmMGBlCRtT9t_ZnHmlK3yzbLNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/professor/:{id}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"professor",
+						":{id}"
+					],
+					"variable": [
+						{
+							"key": "{id}",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createCourse",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU3ODcwMDMyMiwiaWF0IjoxNTc4NjgyMzIyfQ.ZQX64lhNQWEyqY7xOFgHUtF3Ts7FydB9MUUyhjFFtmi58njT4gDkD5ktqlVJU2hty06kC6jB6shF7JORBeX0mA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"professorId\": 1, \"name\": \"Informatica\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/professor/:{professorId}/course",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"professor",
+						":{professorId}",
+						"course"
+					],
+					"variable": [
+						{
+							"key": "{professorId}",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProfessor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhbGV4YW5kcmFmcmluY3VAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTU3OTQ3NDgyNSwiaWF0IjoxNTc5NDU2ODI1fQ.Iv4HYXAaAR6VBnOC-xIESsx6haCDo-1UlnZfqSE71PDeIH300-D2FI3rhMTIGmP739ZwcrWAyl5QQAJq5E5SqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"fullName\":\"Ileana Stanciu\", \n\t\"courseDto\":{\n\t\t\"name\": \"Informatica\"\n\t}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/professor",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"professor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
